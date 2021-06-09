@@ -1,0 +1,97 @@
+:root {
+  --success-color: rgb(34, 179, 118);
+  --error-color: rgb(216, 96, 96);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+#form {
+  padding: 30px 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-item {
+  margin-bottom: 10px;
+}
+
+.form-item label {
+  display: block;
+  font-size: large;
+  color: gray;
+}
+
+.form-item input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-item input:focus {
+  border-color: gray;
+}
+
+.form-item small {
+  font-size: 14px;
+  visibility: hidden;
+}
+
+#form button {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  height: 50px;
+
+  background-color: #3498db;
+  border-color: #3498db;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#form button:hover {
+  background-color: #3ea4e7;
+}
+
+#form button:active {
+  background-color: #228cd3;
+}
+
+.form-item.success input {
+  border-color: var(--success-color);
+}
+
+.form-item.error input {
+  border-color: var(--error-color);
+}
+
+.form-item.error small {
+  visibility: visible;
+  color: var(--error-color);
+}
