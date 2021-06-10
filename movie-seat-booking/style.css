@@ -1,0 +1,102 @@
+:root {
+  --dark: #242333;
+  --seat-color: #444451;
+  --selected-color: #6feaf6;
+  --seat-interval: 15px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: aliceblue;
+  list-style: none;
+}
+body {
+  background-color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+/* 第一部分 --电影选择 */
+#movie-container {
+  font-size: large;
+  margin-bottom: 20px;
+}
+#movie-select {
+  appearance: none;
+  color: var(--dark);
+  border: solid 1px var(--dark);
+  border-radius: 10px;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+  padding: 0 10px;
+}
+/* 第二部分 --座位类型 */
+#status {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2b2941;
+  border-radius: 5px;
+}
+#status li {
+  display: flex;
+  margin: 0 10px;
+}
+#status li small {
+  color: gray;
+}
+/* 第三部分 --屏幕 */
+#seats {
+  perspective: 1000px;
+}
+#screen {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px white;
+}
+/* 第四部分 --座位表 */
+.row {
+  display: flex;
+}
+.seat {
+  height: 17px;
+  width: 20px;
+  background-color: var(--seat-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 3px;
+}
+.seat.occupied {
+  background-color: white;
+}
+.seat.selected {
+  background-color: var(--selected-color);
+}
+.seat:nth-of-type(2) {
+  margin-right: var(--seat-interval);
+}
+.seat:nth-last-of-type(2) {
+  margin-left: var(--seat-interval);
+}
+#seats .seat:not(.occupied):hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+#seats {
+  margin-bottom: 15px;
+}
+/* 第五部分 --底部文字 */
+#count,
+#total {
+  color: var(--selected-color);
+}
+#text {
+  font-size: 17px;
+}
